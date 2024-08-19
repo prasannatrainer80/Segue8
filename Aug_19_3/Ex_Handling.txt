@@ -1,0 +1,85 @@
+IN Store procedure parameters, we have 3 types of parameters as
+
+IN  : Used for input purpose 
+
+OUT : Used to output purpose, as if you want to return more than one value to the corresponding procedure, then we need the help of out parameters
+
+IN OUT
+
+Exception Handling : Mechanism of handling runtime errors during execution of the program. 
+
+declare
+	a number :=&a;
+        b number :=&b;
+        c number;
+begin
+     c:=a/b;
+     dbms_output.put_line('Division ' ||c);
+exception
+     WHEN ZERO_DIVIDE THEN
+        dbms_output.put_line('Division by zero impossible...');
+end;
+
+Create or replace procedure prcDivision(a number, b number)
+AS
+BEGIN
+    Declare
+         c number;
+    begin
+        c:=a/b;
+        dbms_output.put_line('Division ' || c);
+    end;
+Exception 
+     WHEN ZERO_DIVIDE THEN
+	dbms_output.put_line('Division by zero impossible...');
+END;
+
+exec prcDivision(12,3);
+
+_____________________________________________________________________
+
+
+Create or replace procedure prcEmploySearch(eno employ.empno%type)
+AS
+BEGIN
+     Declare
+        nam employ.name%type;
+        dpt employ.dept%type;
+        dsg employ.desig%type;
+        bas employ.basic%type;
+     begin
+        select Name, Dept, Desig, Basic into Nam, dpt, dsg, bas 
+		from Employ where empno = eno;
+        dbms_output.put_line('Employ No  ' || eno);
+        dbms_output.put_line('Employ Name ' || nam);
+        dbms_output.put_line('Department ' || dpt);
+        dbms_output.put_line('Designation ' || dsg);
+        dbms_output.put_line('Basic  ' || bas);
+      Exception
+	  WHEN NO_DATA_FOUND THEN
+		dbms_output.put_line('Employ No ' || eno || ' Not Found...');
+          WHEN OTHERS THEN
+		dbms_output.put_line('Unknown Error');
+     end;
+END;
+
+_________________________________________________________________________________________
+
+create or replace procedure prcEmployInsert
+(
+   eno employ.empno%type,
+   nam employ.name%type,
+   dpt employ.dept%type,
+   dsg employ.desig%type,
+   bas employ.basic%type
+)
+AS
+BEGIN
+    Insert into Employ(empno,name,dept,desig,basic) values(eno,nam,dpt,dsg,bas);
+Exception
+    WHEN DUP_VAL_ON_INDEX THEN
+	dbms_output.put_line('Employ No Already Exists...' || eno);
+END;
+__________________________________________________________________________________________
+
+
