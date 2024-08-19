@@ -1,0 +1,140 @@
+Create Table Accounts
+(
+   AccountNo number primary key,
+   FirstName varchar2(30),
+   LastName varchar2(30),
+   City varchar2(30),
+   State varchar2(30),
+   Amount Number(9,2),
+   CheqFacil varchar2(10),
+   AccountType varchar2(20),
+   Status varchar2(10) default 'active',
+   DateOfOpen Date Default sysdate
+);
+
+Create Table Trans
+(
+   AccountNo Number references Accounts(AccountNo),
+   TranAmount number,
+   TranType varchar(1) CHECK(TranType IN('C','D')),
+   TranDate date default sysdate
+);
+
+
+
+-- Create Account (accountNo needs to be generated automatically) 
+
+select case when max(accountNo) IS NULL THEN 1 else 
+max(accountNo)+1 end from Accounts;
+
+Create or replace procedure prcAccountCreate
+(
+   fname accounts.firstName%type,
+   lname accounts.lastName%type,
+   cit accounts.city%type,
+   st accounts.state%type,
+   amt accounts.amount%type,
+   cf accounts.cheqFacil%type,
+   actype accounts.AccountType%type
+)
+AS
+BEGIN
+      Declare
+	accno accounts.accountNo%type;
+      begin
+         select case when max(accountNo) IS NULL THEN 1 else 
+		max(accountNo)+1 end into accno from Accounts;
+         Insert into Accounts(AccountNo,FirstName,lastName,City,State,Amount,CheqFacil,
+		AccountType) values(accno,fname,lname,cit,st,amt,cf,actype);
+	dbms_output.put_line('Account Created with Accno ' ||accno);
+      end;
+END;
+________________________________________________________________________________
+
+Create or replace procedure prcAccountSearch
+(
+   accno accounts.accountNo%type,
+  fname OUT accounts.firstName%type,
+   lname OUT accounts.lastName%type,
+   cit OUT accounts.city%type,
+   st OUT accounts.state%type,
+   amt OUT accounts.amount%type,
+   cf OUT accounts.cheqFacil%type,
+   actype OUT accounts.AccountType%type
+)
+AS
+BEGIN
+    select FirstName,LastName,CIty,State,Amount,CheqFacil,AccountType into fname,lname,cit,
+		st,amt,cf,actype from Accounts where AccountNo = accno;
+          
+END;
+
+__________________________________________________________________________________________
+
+Create or replace procedure prcAccountOut
+(
+   accno accounts.accountNo%type
+)
+AS
+BEGIN
+	declare
+	 fname accounts.firstName%type;
+   	lname accounts.lastName%type;
+   	cit accounts.city%type;
+   	st accounts.state%type;
+   	amt accounts.amount%type;
+   	cf accounts.cheqFacil%type;
+   	actype accounts.AccountType%type;
+      begin
+	prcAccountSearch(accno,fname,lname,cit,st,amt,cf,actype);
+	dbms_output.put_line('First Name ' ||fname);
+	dbms_output.put_line('Last Name ' || lname);
+	dbms_output.put_line('City  ' || cit);
+	dbms_output.put_line('State ' || st);
+	dbms_output.put_line('Amount ' || amt);
+	dbms_output.put_line('Cheq Facil ' || cf);
+	dbms_output.put_line('Account Type ' || actype);
+      end;
+END;
+
+
+exec prcAccountOut(1);
+
+_____________________________________________________________________________________________
+
+Create or replace procedure prcDeposit
+(
+    accno Trans.AccountNo%type,
+    depAmount number
+)
+AS
+BEGIN
+     declare 
+	flag varchar(1):='C';
+     begin
+     update Accounts set Amount = Amount + depAmount where Accountno = Accno;
+     insert into Trans(AccountNo, TranAmount, TranType) values(accno,depAmount,'C');
+ end;
+END;
+
+_____________________________________________________________________________________________
+
+Create or Replace procedure prcWithdraw
+(
+   accno Trans.AccountNo%type,
+   withdrawAmount number
+)
+AS
+BEGIN
+     declare
+	balance number;
+     begin
+	select Amount into balance from Accounts where AccountNo = accno;
+	if balance - withdrawAmount >= 0 then
+            update Accounts set Amount = Amount - withdrawAmount where Accountno = Accno;
+     insert into Trans(AccountNo, TranAmount, TranType) values(accno,withdrawAmount,'D');
+	else
+	  dbms_output.put_line('Insufficient Funds...');
+        end if;
+     end;
+End;
