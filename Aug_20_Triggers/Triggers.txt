@@ -1,0 +1,113 @@
+A trigger is a database object, that which allows you  invoke the code automatically once any DML operation to be taken place.  They stored in the database and invoked repeatedly iin a particular scenario.  
+
+When the trigger created, it has enabled. 
+
+In Oracle we have BEFORE and AFTER Triggers, as before DML operation anything to be happen, or after DML operation anything to behappen will be defined here. 
+
+If you want to perform any automated actions in response to events on table or views then we need the help triggers. 
+
+Create trigger triggerName after dml_statement on table_name
+AS
+BEGIN
+    // code here
+END;
+
+Create Table Student
+(
+    Sno Number Primary key,
+    Sname varchar2(30),
+    Sub1 NUMBER,
+    Sub2 NUMBER,
+    Sub3 NUMBER,
+    Total Number,
+    Aveg Number(9,2)
+);
+
+
+Create or replace trigger trgStudentIns AFTER INSERT ON STUDENT
+AS
+BEGIN
+     Update Student set total = sub1+sub2+sub3, aveg = (sub1+sub2+sub3)/3;
+END;
+
+ create or replace trigger trgStudentIns after insert on student
+ begin
+    update student set total=sub1+sub2+sub3, aveg=(sub1+sub2+sub3)/3;
+ end;
+
+Insert into Student(Sno,Sname,Sub1,Sub2,Sub3) values(1,'Raguram',56,56,43);
+
+Create Table EmployPayRoll
+(
+    Empno Number Primary Key,
+    Name varchar2(30),
+    Basic number,
+    Hra Number, Da Number, Ta Number, Tax Number, Pf number,
+    gross number, netpay number
+);
+
+Create or replace trigger trgEmployPayroll AFTER INSERT ON EmployPayroll
+BEGIN 
+    Update EmployPayroll set Hra = basic * 0.003, Da = Basic * 0.0012,
+	Tax = Basic * 0.002, Pf = Basic * 0.12, Gross = Basic + (basic * 0.003) +
+		(basic * 0.0012) + (basic * 0.002);
+    Update EmployPayroll set NetPay = Gross - tax-pf;
+END;
+
+
+Insert into EmployPayroll(Empno,name,basic) values(1,'Soumya',84234);
+
+Insert into EmployPayroll(Empno,name,basic) values(2,'Cherish',99323);
+
+____________________________________________________________________________
+
+
+Create Table Customer
+(
+   Id INT Primary Key,
+   Name varchar2(30),
+   City varchar2(30),
+   Amount number
+);
+
+
+Insert into Customer(ID,Name,City,Amount) values(1,'Raguram','Hyderabad',99325.33);
+Insert into Customer(ID,Name,City,Amount) values(2,'Nivetha','Delhi',98842.33);
+Insert into Customer(ID,Name,City,Amount) values(3,'Prasanna','Chennai',90022.33);
+Insert into Customer(ID,Name,City,Amount) values(4,'Shwetha','Hyderabad',88842.33);
+Insert into Customer(ID,Name,City,Amount) values(5,'Shaik','Pune',89324.33);
+
+Create Table CustomerBackup
+(
+   ID Int ,
+   Name varchar2(30),
+   City varchar2(30),
+   Amount Number
+);
+
+Create or replace trigger trgCustomerInsert BEFORE INSERT ON Customer
+FOR EACH ROW
+BEGIN
+     Insert into CustomerBackup(ID,Name,City,Amount) values(:new.id,:new.name,:new.city,:new.amount);
+END;
+
+Create or replace trigger before_delete BEFORE DELETE ON Customer
+FOR EACH ROW
+BEGIN
+     Insert into CustomerBackup(ID,NAME,CITY,Amount)
+	values(:old.id,:old.name,:old.city,:old.amount);
+END;
+
+
+Create or replace trigger update_trigger Before Update ON Customer
+for each row
+begin
+    Insert into CustomerBackup(Id, Name, City, Amount) 
+	values(:old.Id,:old.name,:old.city,:old.amount);
+end;
+
+______________________________________________________________________________________
+
+Transaction : 
+
+

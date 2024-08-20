@@ -1,0 +1,64 @@
+A transaction known as group of sql statements to be executed as a single group.  It contains various properties as ACID properties
+
+1) Atomocity : Either all operations are performed or none of them are performed. 
+
+2) Consistency : Ensure, once transaction finishes consistent data needs to be shared to all people
+	who are accessing database.
+
+3) Isolation : We are not supposed to see the intermediate state of current transaction.
+
+4) Durability : Data needs to be remained permanently in the system in long time. 
+
+Create or replace procedure prcEmployUpdate(eno employ.empno%type,incr employ.basic%type)
+AS
+BEGIN
+	declare
+	   sal number;
+        begin
+	  Update Employ set basic = Basic + incr where empno = eno;
+	  select basic into sal from Employ where empno = eno;
+	  if (sal >= 90000) then
+		rollback;
+		dbms_output.put_line('Salary Rolled Back...');
+          else
+	      commit;
+		dbms_output.put_line('Increment Happend...');
+	  end if;
+        end;
+END;
+
+
+SAVEPOINT : It is optional and is used to rollback a partial transaction, as far as the specified savepoint.
+
+declare
+  total_sal number(9);
+begin
+  update emp set basic=basic+1000 where dept='asp';
+  savepoint s1;
+  update emp set basic=basic+5000 where dept='oracle';
+  savepoint s2;
+  select sum(basic) into total_sal from emp;
+  if total_sal >= 50000 then
+   rollback to savepoint s1;
+end if;
+  commit;
+end;
+
+create or replace procedure prcSavePoint 
+AS
+BEGIN
+    declare
+	total_sal number(9);
+begin
+	update employ set basic = basic + 1000 where dept ='Java';
+	savepoint s1;
+	update Employ set basic = basic + 5000 where dept = 'Dotnet';
+	savepoint s2;
+	select sum(basic) into total_sal from Employ;
+	if total_sal >= 200000 then
+		rollback to savepoint s1;
+	end if;
+	commit;
+end;
+END;
+
