@@ -1,0 +1,33 @@
+Perform the below operations using Stored Procedures and add Exception Handling also
+
+1) Add Stock
+
+2) Search Stock
+
+3) Update Stock
+
+4) Delete Stock
+
+____________________________________________________________________________________
+
+PlaceOrder : 
+________________
+
+Once you Insert Record in Orders table, please conside below points as
+
+1) First particular stockId quantity is available or not need to check
+   means quantityAvail must be greater than quantityOrdered then only placeOrder
+
+   Then calculate total as price from StockTable and quantityOrdered
+
+   Then update quantityAvail in Stock Table as QuantityAvail-QuantityOrdered
+
+Example : 10 ata packets are there in Stock Table with S001 then you placed
+	order for 4 ata packets, then balance is 6 that to be updated
+
+Means 1) Insert and 1) Update operation to be happen on PlaceOrder Stored Procedure
+
+Create or replace procedure prcPlaceOrder(Sid varchar(30), qtyOrd Number)
+As
+BEGIN
+END;
