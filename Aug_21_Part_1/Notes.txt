@@ -1,0 +1,174 @@
+What is an interface : 
+
+What is Object Oriented Programming : 
+
+It is an approach that provides a way of modularizing programming, that which can be used to create small partition memory area for both data and objects, which are to be used as templates for creating copies of such modules on demand. 
+
+Object : An object is a real world entity, that which possess 3 characterstics known as 
+	
+	(i) State
+	(ii) Behaviour
+	(iii) Identity 
+
+OOPS features : 
+_________________
+
+(i) Encapsulation : Wrapping up of data and functions into a single unit known as encapsulation.
+
+(ii) Abstraction : Hiding the irrelevant details of an object, that do not contribute to its essential characterstics known as abstraction.
+
+(iii) Inheritance : Deriving a new entity from already existing entity known as inheritance, through inheritance we can reduce the size of the program. 
+
+(iv) Polymorphism : The ability to take more than one form known as polymorphism.
+
+
+class : A class is a template or blueprint, that which contains combination of data members and member functions.  Members of the class can be accessable by using instance of the class. 
+
+class class_name
+{
+   data members;
+   member functions;
+}
+
+System.out.println() : Used to display any value or message. 
+
+Access Modifiers : 
+___________________
+
+private  : Allows you to access members within current class. 
+
+public : Allows you to access members in entire application. 
+
+protected : Allows you to access members within current/derived class. 
+
+friendly : Allows you to access members within all classes of current package. 
+
+
+class_name obj = new class_name();
+
+There are 2 types of memories as 
+
+(i) Stack
+
+(ii) Heap 
+
+Value types will be stored in STACK memory and reference types will be stored
+in heap memory. 
+
+What is Constructor : 
+______________________
+
+A constructor is a special member which used to initialize the member variables
+of the class, it is special because it has the same name as that of class name. 
+
+Rules : 
+________
+
+(i) It will not contains any return type
+
+(ii) It will not return any value
+
+(iii) It will be invoked automatically once the instance of the class created
+
+(iv) A constructor can be overloaded. 
+
+There are 2 types of constructors known as
+
+1) static constructors : These are the constructors that which are invoked 
+automatically before control reaches the entry point. These constructors
+used to initialize the static variables of the class, these constructors
+cannot be overloaded.
+
+2) instance constructors : These are the constructors that which are invoked
+automatically once the instance of the class created, these constructors 
+can be overloaded. 
+
+Inheritance : The concept of deriving a new class from already existing class
+known as inheritance, the class which derived known as derived class, the 
+class from which its derived known as base class. 
+
+Through inheritance, we can reduce the size of the program. 
+
+interface : java does not support the concept of multiple inheritance, to
+achieve this we need the help of interface. An interface contains method declaration
+and the implementation can be done in the corresponding class, you can add 
+more than one interface to the particular class. 
+
+Difference between interface and abstract class : 
+___________________________________________________
+
+(i) An abstract class contains both abstract and non-abstract methods, 
+where interface contains only abstract methods. 
+
+(ii) Interface methods are public and abstract by default *** in Jdk 1.8 we can write code in interface, but that method must be default method, as it is known as defender method as interface rules it is defending for time being. 
+
+(iii) Multiple Inheritance can be achieved by using interfaces
+
+(iv) An interface can be called from anywhere to anywhere.
+
+_______________________________________________________________________
+
+Lambda expression is a new feature in java provides a clear and concise way
+to represent one method interface using an expression. It is very useful in collection
+library, it helps to iterate, filter and extract data from collection. 
+
+Why to use lambda expression
+
+(i) To provide implementation for interface
+
+(ii) less coding
+
+java lambda expression syntax
+
+(argument-list) -> {body}
+
+Java Lambda expression consists of 3 components
+
+(i) Argument-list : It can be empty or non-empty as well
+
+(ii) Arrow-Token : Used to link arguments-list and body of expression
+
+(iii) Body : It contains expressions and statements for lambda expression.
+
+An interface that which contains only one abstract method known as 
+
+functional interface. 
+
+You can define functional interface using 
+
+@Functionalinterface annotation
+
+Optional class : Used to handle null values, if the value is null or not present we need to write alternate statements. 
+
+That can be ensures by using Optional class. 
+
+Default methods : These are called defender methods, as if multiple interfaces have same method and we need to overcome the ambiguity issue, then we need the help of default methods. as default methods to be implemented in the interface. As generally interface methods don't have implementation, but default methods will have the implementation. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

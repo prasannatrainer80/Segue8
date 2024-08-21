@@ -1,0 +1,38 @@
+1) What is object oriented programming
+
+2) What is class
+
+3) What is Object
+
+4) What is JVM architecture
+
+5) Compiling and Execution procedure of java program
+
+6) What are access modifiers
+
+7) Explain about data types in java
+
+8) What is an array
+
+9) What is method overloading
+
+10) What is constructor
+
+11) Explain about static class, static constructor, static variable, static method
+
+12) What is inheritance
+
+13) What is Abstract class and interface
+
+14) what is super keyword
+
+15) Difference between interface and abstract class
+
+16) What is Exception Handling
+
+17) What is difference between checked and unchecked exceptions
+
+18) How to create user defined exceptions
+
+19) What are collections, explain about List, Set, SortedSet in detail
+
