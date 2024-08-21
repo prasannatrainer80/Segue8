@@ -145,6 +145,58 @@ That can be ensures by using Optional class.
 Default methods : These are called defender methods, as if multiple interfaces have same method and we need to overcome the ambiguity issue, then we need the help of default methods. as default methods to be implemented in the interface. As generally interface methods don't have implementation, but default methods will have the implementation. 
 
 
+Method References : 
+____________________
+
+int a=5;
+
+int b=a;
+
+
+void show() {
+...
+...
+}
+
+display = show;
+
+Method References ensures if you want to refer existing method with new method without rewriting the code, that can be ensured with method references. 
+
+______________________________________________________________________________________________
+
+Exception Handling : It is a mechanism of handling the runtime errors during the execution of the program. There are 2 types of errors known as
+
+	(i) Compile Time Errors
+
+	(ii) Runtime Errors 
+
+By using exception handling we can overcome the runtime errors. 
+
+To handle errors we have 3 blocks known as
+
+(i) try block : This block contains statements, in which there is possibility of getting runtime errors, the statements which are placed in this block are treated as heavy weighted statements as JVM allocates excess memory to them. 
+
+(ii) catch block : Once exception raised in try block, then the control will be forwarded to catch block, this block contains alternate statements for exceptions raised in try block, one try block can contains multiple catch blocks. 
+
+(iii) finally block : This block contains statement(s) that needs to be executed mandatorily irrespective of try and catch blocks, this block is not mandatory, but all the statement(s) which are placed in this block are executed as mandatory statement(s).
+
+Exception is the top most class, from which all kinds of exceptions are derived. 
+
+try {
+...
+...
+} catch (Exception e) {
+...
+...
+...
+} finally {
+...
+...
+...
+}
+
+
+
 
 
 

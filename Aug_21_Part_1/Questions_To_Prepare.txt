@@ -1,32 +1,140 @@
 1) What is object oriented programming
 
+	It is an approach that provides a way of modularizing programming, that which can be used to create small partition memory area for both data and objects, which are to be used as templates for creating copies of such modules on demand. 
+
 2) What is class
+
+	A class is a template that which contains combination of data members and member functions. Members of the class can be accessable by using instance of the class. 
 
 3) What is Object
 
+     An object is a real world entity, that which possess 3 characteristics known as
+
+		(i) State
+
+		(ii) Behaviour
+
+		(iii) Identity 
+
 4) What is JVM architecture
+
+	JVM contains major components as
+
+		(i) Class Loader
+
+		(ii) JIT Compiler
+
+		(iii) Execution Manager 
 
 5) Compiling and Execution procedure of java program
 
+	When you compile any java program first instead of converting into CPU specific code, 
+	first its converted into bytecode, 
+
+	There are 2 types of class loaders as 
+
+		(i) Premordial class loader : used to load all system classes which are required
+			to run the program.
+
+		(ii) Class Loader Objects  : used to load all user-defined classes which are 
+			required to run the program. 
+
+	In Class loader, we have JIT (Just-In Time) Converts bytecode into CPU specific format. 
+
+	Then it would be send to execution manager, which contains queue of programs ready to execute, where we can execute the program. 
+
+	Before execution, it needs to undergone security authentication. 
+
 6) What are access modifiers
+
+	private : Alows you to access members within the class.
+
+	public  : Allows you to access members in entire application.
+
+	protected : Allows you to access members within current/derived class. 
+
+	friendly : By default java possess friendly access modifier, allows you to access 
+			members within all classes of current package. 
 
 7) Explain about data types in java
 
+There are 2 types of data types as
+
+	(i) value types : int, float, double, char, Boolean 
+
+	(ii) reference types : String, Object and user defined types. 
+
+*** Values types will be stored in STACK memory and reference types will be stored in HEAP 
+		memory ***
+
 8) What is an array
+
+	An array is the finite ordered set of homogeneous elements, means all the elements belongs to same data type. All the elements of array are stored in successive memory locations. 
 
 9) What is method overloading
 
+	The concept of using the same method name w.r.t. Different data types or different parameters known as method overloading. Here, the method name must be same, but no.of parameters or type of parameters we are using here are different. 
+
 10) What is constructor
+
+	A constructor is a special member, which used to initialize the member variables of the class, it is special because it has the same name as that of class name. 
+
+Rules : 
+
+	(i) It will not contains any return type
+
+	(ii) It will not return any value
+
+	(iii) It will be invoked automatically once the instance of the class created
+
+	 (iv) A constructor can be overloaded. 
 
 11) Explain about static class, static constructor, static variable, static method
 
-12) What is inheritance
+These are the variables, that which retains values irrespective of type of object. static variables belongs to class not to object. static methods directly called by using class name no object required to call these methods. 
+
+12) What is inheritance 
+
+The concept of deriving a new class from already existing class known as inheritance, the class which derived known as derived class, the class from which its derived known as base class. Through inheritance we can reduce the size of the program. 
+
+class First {
+....
+....
+....
+}
+
+class Second extends First {
+....
+....
+....
+}
+
+Once you create an object to Second class, then you can access all public/protected and friendly members of base class. 
 
 13) What is Abstract class and interface
 
+A class that which can be created, but not implemented and instantiated known as abstract class, abstract class contains both abstract and non-abstract methods, abstract methods needs to be overrided mandatorily by the derived class. 
+
+Java does not support the concept of multiple inheritance, to achieve this we need the help of interfaces, an interface contains method declaration, and the implementation can be done in the corresponding class, you can add more than one interface to the particular class. 
+
 14) what is super keyword
 
+if you want to pass values from derived class to base class, then we need the help of super keyword, it has 2 forms as 
+
+	(i) super as a keyword
+
+	(ii) super as a constructor 
+
 15) Difference between interface and abstract class
+
+	(i) Abstract class contains both abstract and non-abstract methods where interface contains
+		only abstract methods.
+
+	(ii) interface methods are public and abstract by default.
+
+	(iii) Multiple Inheritance can be achieved by using interfaces
+
+	(iv) An interface can be called from anywhere to anywhere. 
 
 16) What is Exception Handling
 
