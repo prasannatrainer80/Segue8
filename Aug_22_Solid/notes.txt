@@ -1,0 +1,29 @@
+In SDLC, Object Oriented Programming places vital role when it comes to writing flexible, scalable, maintainable and resuable code. 
+
+To ensure Object Oriented Design follows SOLID principles for good object-oriented programming.
+
+The SOLID principle introduced by C. Martin 
+
+1) S -> Single Responsibilty Principle (SRP)
+
+2) O -> Open/Closed Principle 
+
+3) L -> Liskov's Substitution Principle (LSP)
+
+4) I  -> Interface Segregation Principle (ISP)
+
+5) D  -> Dependency Inversion Principle (DIP)
+
+1) Single Responsibility Principle Means
+	A class should have only one reason to change means every class will have single responsibility or single job or single purpose. We cannot deviate from actual purpose. 
+
+2) Open/Closed Priniciple 
+
+	This principle states that Software entities (classes, methods, modules) should be open
+	for extension, but closed for modification, which means you should be able to extend
+	the class behavior without modifying it.
+
+For Example : Assume, you have Electricity Billing System implemented previously it accepts only DebitCard and NetBanking, now after extension it will accept PhonePe also, 
+
+to achieve above thing, instead of modifying NetBanking and DebitCard code, we are creating sepeate class as PhonePe, as NetBanking and DebitCard classes are closed for modification. 
+
