@@ -1,0 +1,16 @@
+Create a Class as
+
+Customer contains
+
+custId int
+custName String
+city String
+premium double
+dateOfBirth date (utildate)
+
+Add 10 records and print using foreach method
+display records whose premium > 80000
+display who belongs to city delhi
+display sorted by dateofbirth
+display sorted by custName
+

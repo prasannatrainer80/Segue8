@@ -195,6 +195,15 @@ try {
 ...
 }
 
+There are 2 types of exceptions as 
+
+(i) Checked Exceptions : These are the execptions that which occurs at 
+compile time, during compilation jvm feels some erroneous code is there and 
+stops the execution at compile time can be handled at method level by using
+throws keyword. 
+
+(ii) Unchecked Exceptions 
+
 
 
 
