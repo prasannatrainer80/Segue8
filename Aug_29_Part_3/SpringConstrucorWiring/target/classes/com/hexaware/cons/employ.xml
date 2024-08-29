@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC 
+"-//SPRING//DTD BEAN//EN" 
+"http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+	<bean id="employ1" class="com.hexaware.cons.Employ">
+		<constructor-arg value="1" type="int" />
+		<constructor-arg value="Shweta" />
+		<constructor-arg value="84823" type="double"/>
+	</bean>
+</beans>
