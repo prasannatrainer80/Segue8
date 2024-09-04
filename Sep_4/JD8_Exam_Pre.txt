@@ -1,0 +1,209 @@
+Solid Principles 
+
+SRP (Single Responsibility Principle) 
+
+Means one class will have specific responsibillty means in model write model code no business logic
+
+O : Open/Closed Principle (OCP) 
+
+Open for Extension and Closed for Modification.
+
+Means if any extension to be added it must be in different class not in existing class, 
+as don't disturb working code. 
+
+LSP (Liskov Substitution Principle) 
+
+Derived classes not supposed to override base class method codes, that must be supported by using
+abstract class or interface. 
+
+class Test {
+   void show() 
+}
+
+class Demo extends Test P
+ void show()
+}
+
+this is not LSP,
+
+the above we need to do by using LSP
+
+
+abstract class Data {
+void show()
+}
+
+class Test extends Data 
+
+class Demo extends Data 
+
+Interface Segregation Principle (ISP)
+Don't put all methods in single interface, as make multiple interfaces
+and add relevant interfaces to particular class
+
+if you add all methods to one interface, then non applicable methods to be
+implemented by corresponding class, its no use
+
+Dependency Inversion Principle (DIP)
+
+High level modules should not depend on the low-level module but both should
+depend on the abstraction. 
+
+1) Which interface type can lambda expressions be used for java 
+
+1) Abstract Class
+
+2) functional interfaces
+
+3) Normal interfaces
+
+4) All
+
+Functional interfaces can be used as lambda expressions
+
+which symbol can be used as lambda expression 
+
+-> 
+
+What is the below code will return 
+
+(x,y) -> x+y
+
+
+What is below code will return 
+
+(x, y) -> {
+    if (x > y ) return x; else return y;
+};
+
+
+Lambda Expressions are used to replace 
+
+Obejcts
+
+Variables
+
+Anonymous Classes
+
+Loops
+
+Anonymous Classes
+
+(int x, int y) -> x+y;
+
+(x, y) -> return x+y;
+
+x -> x*x
+
+If an interface contains only one abstract method knwon as 
+
+Functional Interface 
+
+You can define functional interface as
+
+@FunctionalInterface
+interface IOne {
+...
+...
+}
+
+Lambda expressions can be used for sorting, looping and filtering 
+
+Lambda variables  scope will be in current loop only
+
+Can we use break and continue in lambda expressions ??? No
+
+Streams are effective features in lambda expressions
+
+Lambda expressions will throw exceptions or not (Yes)
+
+What is Optional Class : 
+
+A container that may or may not contains value. 
+
+If you want to overcome NullPointerException then we need Optional Class.
+
+What is the syntax for lambda expression ???
+
+(parameters) -> {body}
+
+Can lambda expressions have multiple parameters ???
+
+Yes
+
+What is purpose of Filter() method
+
+Separates records based on condition.
+
+what is purpose of foreach() method 
+
+To iterate over each element in the stream and perform an action. 
+
+What is default method in an interface 
+
+Default method will have implementation, as method with a default implementation in an interface
+
+How to check the stream is empty or not
+
+By using noneMatch() method
+
+Can lambda expression be used with comparator interface
+
+Yes
+
+What is purpose of Optional Class
+
+To represent the presence or absence of value
+
+How to remove duplicates from Stream API
+
+distinct()
+
+Which method of stream api used for sorting 
+
+sorted()
+
+which method of stream api used for count of elements
+
+count()
+
+Method reference used to refer a method to already implemented method, 
+
+@FunctionalInterface
+interface IHello {
+ void show();
+}
+
+class Test {
+   public static void display() {
+	...
+	...
+   }
+
+   public void test() {
+....
+....
+}
+
+ // now map the display() to show() method 
+
+   IHello hello = Test::display;
+
+Then display method will be mapped to show()
+
+If you want to refer to object method
+    Test obj = new Test();
+    IHello hello1 = obj::test;
+
+
+class Test {
+   Test(String msg) { }
+}
+
+interface ITest {
+...
+}
+
+ITest test = Test::new;
+
+
