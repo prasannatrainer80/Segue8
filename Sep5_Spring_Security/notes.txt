@@ -1,0 +1,61 @@
+Spring Security is a framework which provides various security features like, authentication, authorization to create secure java enterprise applications. 
+
+Spring Security Freamework targets two major areas of application as 
+
+1) Authentication : It is a process in which any resource can be accessable after providing proper user name and password. 
+
+2) Authorization : Once authentication happened, the authenticated user has permission to access which resources 
+
+
+Spring Security framework supports wide range of authentication modes, as 
+
+Basic Authentication
+Digest Authenication
+
+Form-based authenation
+OAuth based authentication
+Database-based authentication
+JWT authentication
+
+
+Spring-security core
+
+Spring-security web
+
+<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-security</artifactId>
+		</dependency>
+
+	<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+
+Then create a class name as SecurityConfig and to enable security, then 
+
+@Configuration
+@EnableWebSecurity
+
+Then it asks to implement mandatory method, as configure() there please specify which urls you need to access freely, or which urls you need to give permission all to be specified here
+
+protected void configure(HttpSecurity http) throws Exception {
+        http
+                .authorizeRequests()
+                .anyRequest().authenticated()
+                .and()
+                .formLogin()
+                .and()
+                .httpBasic();
+    }
+
+To specify default user name and password, in properties files 
+
+spring.security.user.name=user
+spring.security.user.password=user
+
+This is the way we need to specify credentials and then we can access that resource. 
+
+
+
