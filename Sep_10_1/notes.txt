@@ -1,0 +1,147 @@
+Web Application : 
+_________________
+
+	These are the applications that which are to be called from various places rather than where they are created. If you want to make any distributed or robust applications, then we need the help of web applications. 
+
+You can create web applications in 2 ways as 
+
+(I) Scripting Languages
+
+(ii) Programming Languages 
+
+*** What is the difference between scripting and programming languages ***
+
+Scripting Languages are languages, that which are interpreted, during runtime 
+they takes lot of time to execute. 
+
+Programming languages are languages, that which are compiled first, during
+runtime they takes very less time to execute. 
+
+In Web applications, we can implement both
+
+(i) Client-Side
+(ii) Server-Side 
+
+In Client-Side scripting enables you to access the application from Client, 
+No Network traffic,
+Execution will be faster.
+
+In Server-Side scripting enables you to access the application from server,
+Network traffic is high
+A bit slower. 
+
+*** Any intranet based application w.r.t. no security, please opt for 
+client-side scripting ***
+
+*** Any internet based application w.r.t. Min security, please opt for 
+both client-side/server-side scripting ***
+
+*** Any internet based application w.r.t. High Secuirty, please opt for
+Server-Side scripting ***
+
+HTML (HyperText Markup Language) 
+
+Which allows you to create any sample web pages. 
+
+To start with HTML
+
+<html>
+</html>
+
+<head> </head> : used to define global content for the given page. 
+
+<title> </title> : Used to display heading on title bar. 
+
+<body> </body> : Contains the actual content for the page.
+
+DL : Definition Language
+
+DT -> Definition Term
+
+DD -> Definition Description 
+
+Forms : Allows you to accept data from keyboard. 
+
+You can define form by using 
+
+<form>
+</form> 
+
+<input type="text" /> 
+
+<input type="password" /> 
+
+<input type="button" /> 
+
+<input type="submit" /> 
+
+<input type="number" /> 
+
+<input type="date" /> 
+
+<input type="time" /> 
+
+<input type="url" /> 
+
+<input type="checkbox" /> 
+
+<input type="radio" /> 
+
+______________________________________________________________________________________________________
+
+Angular is a framework that which allows you to create any desktop, standalone and distributed applications.
+
+Angular mostly allows you to create SPA Single Page Application. 
+
+SPA as never refresh entire page only the particular content to be sent to server
+and get the response back. Best example for SPA is 
+google maps. 
+
+Anuglar implemented on top of nodejs platform. 
+
+To start with angular, please install as
+
+npm install @angular/cli -g
+
+-g stands for global means it will be installed in global folder. 
+
+c:\user\user_name\appdata\roaming\npm\
+
+Angular is all about components, any code to be written in components. 
+
+By default, you have one component as app.component
+
+You can create component in angular as
+
+ng g c component_name 
+
+App.module.ts file is module file that decorated with annotation @NgModule
+
+is heart for angular env. 
+
+At first angular applications runs, this file gets executed 
+
+It contains various sections as
+
+(i) Declarations : All user-defined components are present here
+
+(ii) Imports : Any system directives in place are here
+
+(iii) Providers : Any services are there that will be here
+
+(iv) BootStrap : Default component to be run then here we need to write the code. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
