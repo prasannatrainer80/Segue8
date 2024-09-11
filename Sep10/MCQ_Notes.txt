@@ -1,0 +1,194 @@
+1) Prepare for Sb HTTP Verbs GET/POST/PUT/DELETE
+
+Entity
+Repo
+Service
+Controller
+
+Optional (Exception)
+
+2) SB with JPA
+
+3) Prepare for JWT Authentication 
+
+   Json Web Token is an authentication key code to be generated for 
+particular user based on their roles
+
+As in our service, we have some urls any one can access but some urls
+only particular domain user can access then once they send 
+request to service, then we need to generate one authentication code 
+which will be alive for particular period of time, then next time
+no need to enter credentials, as access the resource and in Authorization
+Header Context please pass the bearer token then the resource will be accessable
+
+Now a days in market this kind of authentication is going on. 
+
+What is Spring Boot Restful Servies : 
+____________________________________
+
+1) Rest stands for 
+
+	-> Representational state transfer
+
+Why Rest is in market now a days
+
+previously people are using SOAP (Simple Object Access Protocol) Based services, they are processing on 
+xml format, but we need to render data in XML, JSON, STRING, Object etc....formats
+then we need the help of Restful web services
+
+2) Which proptocol we are using for REST
+
+http
+
+3) Which status code comes if the page not found
+
+404
+
+4) Which status code comes if internal server error
+
+500
+
+5) Which HTTP Code 200 indicates
+
+Success
+
+6) Which HTTP Method we use to make an HTTP request to create new resource
+
+POST
+
+Post submits an entityto the specified resource, often causing in state or 
+side effects
+
+7) Which HTTP Ver Used to update the existing resource
+
+PUT
+
+8) What is the difference between RequestMapping and GetMapping
+
+RequestMapping only used to give alias mapping name for classes, 
+
+where GetMapping used to given alias path for methods. 
+
+9) See the below code and tell me how to access the resource
+
+@RestController
+@RequestMapping(value="api/exam")
+public class HelloController
+{
+      @GetMapping(value="/welcome")
+      public String welcome() {
+	 return "Welcome to REST";
+     }
+
+     @GetMapping(value="/showEmploy")
+     public List<Employ> showEmploy() {
+	return repo.findAll();
+     }
+
+     @GetMapping(value="/searchEmploy/{id})
+     public Employ searchEmploy(@PathVariable int id)
+     {
+	return repo.findById(id).get();
+     }
+}
+
+How to Access welcome assume it runs in 8080 port 
+
+locahost:8080/api/exam/welcome
+localhost:8080/api/exam/searchEmploy/1
+
+10) Which does the HTTP status code 201 incidate
+
+Created
+
+11) What are the basic HTTP Verbs available
+
+GET, POST, PUT, DELETE
+
+12) What is the purpose of Authorization header in REST API
+
+It provides authentication credentials for accessing protected resources
+
+12) What is the status code for Forbidden
+
+403
+
+13) Which class responsible for performing Multitude of operations on Rest Services
+
+1) RestTemplate
+
+14) What is purpose of Spring Boot
+
+To create Standalone, Production-grade spring based apps
+
+15) What is the purpose of @SpringBootApplication
+
+It is the convenience annotation that add @SpringBootConfiguration, 
+@EnableAutoConfiguration and @ComponentScan
+
+16) Default port for spring boot 8080
+
+17)  Which Embeded Server will be there with Spring Boot By Default
+
+Tomcat
+
+18) What is purpose of @AutoWired
+
+Automatically wires beans into properies, constructors or methods
+
+19) What is the purpose of @Entity
+
+To Declare any JPA entity
+
+20) Which dependency to be added to spring for security
+
+spring-boot-starter-security
+
+21) What is the purpose of @Serive Annotation
+
+To mark that class as service provider will give all built in and customized code
+
+22) Can SpringBoot Can access Database if so, how can it access the database
+
+Through automatic configuration of DataSource and JdbcTemplate
+
+23) What is the role of @RequestBody annotation in Spring Boot
+
+To Bind a method parameter to a web request body
+
+24) How can you secure restful endpoint in spring 
+
+Through spring security and configuration
+
+25) @CrossOrign annotation in spring boot
+
+To allow external application to access our service then we need to enable his
+
+26) In Spring Boot How to give config information
+
+specify in application.properties
+
+27) What is the purpose of @PathVariable
+
+To bind a method parameter to a path variable in URL
+
+28) In SB how the way the @Bean to be defined
+
+By using @Bean annotation in config class
+
+29) How to define JPA repository in SB
+
+By defining an interface that extends JPARepository
+
+and add annotation above as @Repository
+
+JPARepository generates default methods (CRUD) for the entity class specified
+as no need to write code
+
+30) What is the purpose of @GeneratedValue annotation 
+
+Automatically generate primary key values
+
+31) 
+
+

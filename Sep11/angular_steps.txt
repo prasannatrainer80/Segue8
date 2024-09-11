@@ -1,0 +1,68 @@
+Steps to create angular Application
+
+1) Download and install nodejs
+
+2) To configure angular on nodejs platform
+
+npm install -g @angular/cli
+
+-g stands for global as its installed in global folder as next time we can access all dependencies form that
+
+3) To create angular project
+
+ng new Project_Name --no-standalone
+
+as --no-standalone ensures create angular 15 project 
+
+4) Then the project have default code, 
+
+it has default component under src folder as 
+
+app.component.ts
+app.component.html
+app.component.spec.ts
+app.module.ts 
+
+
+5) To start angular project go to common prompt and run as
+
+npm start 
+
+by default it runs in 4200 port
+
+6) To create component give command as
+
+ng new component_name
+
+7) To call component in app.component.html then 
+
+copy the selector of that component and paste in html format in app.component.html
+
+_____________________
+
+
+alert() : Used to display any message in dialog box.
+
+*ngIf : Used to check for conditions.
+
+*ngSwitch : For switch case
+
+*ngFor for iterating data 
+
+Syntax : Assume, we have collection as employs then
+
+<ol *ngFor="let e of employs">
+
+let is for local vairables 
+
+it is similar to 
+
+for(Employ e in employs) 
+
+
+
+ 
+
+
+
+
