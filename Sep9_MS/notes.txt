@@ -60,5 +60,42 @@ Now, if you send JWT tokens through HTTP headers, you should try to prevent them
 Some servers don't accespt more than 8kb in headers, if you are trying to embed too much info 
 in JWT token, like by including all the user's permissions, you may need an alternative solution. 
 
+___________________________________________________________________________
+
+Microservices : 
+
+Microservice architecture is a service oriented architecture. 
+
+Lot of services are combined together and they form one big service. that kind
+of concept we call as microservice.
+
+Here we can use one service in another service. 
+
+By combining all services, we need to construct one big service, that is the purpose of microservice. 
+
+Apart from that it implements various operations as
+
+1) Load Balancing : As the network traffic increases, then instead of accessing from specific port, i need to access from alternate gatways known as load balancing. 
+
+2) Api Gateway : It provides only one entry point for all services. 
+
+3) Fault Tolerance : 
+
+Characterstics of microservices : 
+__________________________________
+
+   -> Single Responsibility 
+
+   -> Modeled around business domain : ANy database can acess this service
+ 
+   -> Isolated Failure : We can detect the failure service and restore automatically
+
+
+For making spring boot microservice we prefer Spring Cloud framework to be implemented
+
+for this we have one free server known as Netflix Eureka Server 
+
+It has 2 run in 8761 port 
+
 
 	

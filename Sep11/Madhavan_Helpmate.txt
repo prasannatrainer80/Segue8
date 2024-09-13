@@ -1,0 +1,46 @@
+LeaveDetails(LeaveId+,EmpID-,LeaveStartDate,LeaveEndDate,NofDays,LeaveType,
+LeaveStatus,LeaveReason,ManagerComments)
+
+ApplyLeave
+
+Read EmpId, LeaveStartDate,LeaveEndDate,LeaveType (EL/PL/ML), LeaveReason
+
+LeaveStatus by default PENDING
+noOfdays you need to calculate
+
+Check the leave is available or not then update leaves as
+
+Once applied as you took 3 days you have balance for 13 days then
+remaining is 10 days
+
+Then once applied leave
+
+Your manager to be approve
+
+Once Approve
+
+Status to be changed to Approved
+
+If rejected change to Reject and refund the balance
+
+as 3 days already deducted add back to table.
+
+____________________________________________________
+
+ProcesPayroll 
+
+EmpId, Saldate, Salary, TakeHome, Comments 
+
+E001, Sep 2024, 80000, 75000, loss of pay affected
+E002, Sep 2024, 80000, 90000, referral bonus you got 10000
+
+
+__________________________
+
+After payroll process
+
+form employ table (vs) Payroll table check who are not received salary
+
+if so process and check monthwise who got timely payments. 
+
+
