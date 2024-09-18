@@ -1,0 +1,158 @@
+What is Angular : 
+
+Angular is A UI framework, that which allows you to create any desktop, standalone and enterpriase level applications. 
+
+Angular implemented on top of nodejs platform. 
+
+To install angular, please give the command as 
+
+npm install -g @angular/cli
+
+-g stands for global folder, as once its installed in global folder we can access w.r.t. path.
+
+c:\users\user_name\appdata\roaming\npm 
+
+How to create an angular application,
+
+ng new project_name
+
+but it creates a project with angular 18 version, and there demand for more standalone projects, 
+
+but if you want to make angular 15 version, project give the command as
+
+ng new project_name --no-standalone 
+
+if it is no-standalone, then app.module.ts file will be generated and in that all the project information will be stored. 
+
+Once the project created, it generates a folder known as NodeModules, which contains all dependencies about the project. 
+
+all the dependencies will be stored in package.json file. 
+
+tsconfig.json file contains the permissions and restrictions defined for the angular project. 
+
+Once the project created then it generates default component as app.component.ts file, 
+
+that is global component. 
+
+The heart for angular project is app.module.ts file 
+
+which is decorated with annotation @NgModule 
+
+Module file contains various sections as 
+
+1) Declarations : Contains all user-defined components available in the current project. 
+
+2) Imports : Any system defined imports to be there like BrowserModule which allows you to run the project in browser, same way FormsModule to implements forms programming.
+
+3) Providers : Allows you to define any user defined services available for the project.
+
+4) BootStrap : Which is the default component to be started, By default AppComponent is the default component. 
+
+
+Angular is all about components, any code to be written within angular component only and to be called. 
+
+You can create angular component by using 
+
+ng g c component_name 
+
+By default it generates 4 files, 
+
+component.ts
+component.html
+component.css
+component.spec.ts
+
+DataBinding : Allow you to bind the data to the given html page.
+
+There are various types of bindings knwon as
+
+1) Interpolation : {{ }} this is known as interpolation, which allows you to print the data. 
+
+2) EventBinding : (click), (change) like events are there which allows you to perform some action on them.
+
+3) TwoWay Binding : For Model to View/View to Model any changes to be reflected, then we can use Two-Way Binding, for this we need to import FormsModule in app.module.ts file and use ngModel for TextBoxes etc...
+
+
+There are various types of directives available in angular as 
+
+*ngIf
+
+*ngSwitch
+
+*ngFor 
+
+Routing allows you to redirect to the target page.
+
+For routing we need to help of 
+
+RouterModule class to be imported. 
+
+Routes : Used to define no.of routes
+
+<router-outlet> </router-outlet> Acts as a placeholder
+
+Routing : Allows you to redirect the page to the corresponding target page or component. 
+
+You can implement routing by using predefined module known as RouterModule 
+
+First, we need to set path for each component as
+
+const routes : Routes = 
+[
+  {path:'',component:MenuComponent},
+  {path:'first',component:FirstComponent},
+]
+
+path:'' -> ensures it is a default component. 
+
+path:'*' -> Ensures it is an error component
+
+After defining the path's as 
+
+const routes : Routes = 
+[
+  {path:'',component:MenuComponent},
+  {path:'first',component:FirstComponent},
+  {path:'second',component:SecondComponent},
+  {path:'third',component:ThirdComponent},
+  {path:'event',component:EventDemoComponent},
+  {path:'twoway',component:TwoWayComponent},
+  {path:'calc',component:CalcComponent},
+  {path:'condition',component:Condition1Component},
+  {path:'switchcase',component:SwitchExComponent},
+  {path:'employshow',component:EmployShowComponent}
+]
+
+To apply the paths, in app.module.ts file imports sections 
+
+RouterModule.forRoot(routes)
+
+Then ensures we need to apply routing for above components w.r.t. Path. 
+
+To see the result of the routing, we need to place 
+
+<router-outlet> </router-outlet>
+
+This is predefined tag, to be placed default in app.component.html file
+as routing to be taken place
+
+Then by default it goes to menu component, as in menu component, we nee to give
+paths to the components by using anchor (a) tag. as
+
+<a [routerLink]="['first']">First Component</a>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a [routerLink]="['second']">Second Component</a>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a [routerLink]="['third']">Third Component</a>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a [routerLink]="['event']">Event Component</a>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a [routerLink]="['twoway']">TwoWay Component</a>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+
+
+
+
+
+
