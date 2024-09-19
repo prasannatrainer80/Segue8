@@ -1,0 +1,15 @@
+<p>menu works!</p>
+
+<a [routerLink]="['/menu',{outlets:{'hexa':['employShow']}}]">Employ Show</a>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a [routerLink]="['/menu',{outlets:{'hexa':['employSearch']}}]">Employ Search</a>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a [routerLink]="['/menu',{outlets:{'hexa':['employInsert']}}]">Employ Insert</a>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a [routerLink]="['/menu',{outlets:{'hexa':['employUpdate']}}]">Employ Update</a>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a [routerLink]="['/menu',{outlets:{'hexa':['employDelete']}}]">Employ Delete</a>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+<hr/>
+<router-outlet name="hexa"></router-outlet>
