@@ -1,0 +1,9 @@
+http://localhost:1111/vendorAuthenticate/balan89/chennai@123
+
+http://localhost:1111/showVendor
+
+http://localhost:1111/vendor/1
+
+http://localhost:1111/vendorOrders/1
+
+http://localhost:1111/vendorPendingOrders/1
