@@ -1,0 +1,7 @@
+Material table allows you to display data in tabular format, but here, we can perform
+
+Pagination, Sorting, Filtering in easier way. 
+
+To start with Material Table, we need to implement
+
+ng add @angular/material
