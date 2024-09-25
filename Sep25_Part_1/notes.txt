@@ -1,0 +1,58 @@
+1) Route Guard
+
+In Angular, guards are special classes used to control and manage the access to different parts of an application.  They decide whether a user can navigate to a particular route or perform certain actions based on specific conditions. 
+
+Like checking user is logged in or has the necessary permissions. Guards acts as gatekeepers, allowing or preventing access to different parts of the applications, ensuring security and controlling the flow of navitation within the app.
+
+Types of Route Guards in Angular : 
+__________________________________
+
+ CanActivate 
+	
+	: Determines if the route can be activated and allows navigation
+		based on certain conditions.
+
+	: Implemented using CanActivate interface.
+
+_____________________________________________________________________________________________
+
+Angular Life Cycle 
+___________________
+
+1) Constructor : This is the first event fired in angular which contains default properties of class/component, and data to be stored in controls and data to be populated. 
+
+[] => Property Binding
+() => Event Binding
+[()] => Two-Way
+
+2) ngOnChanges : Responds when angular set the data bind properties, it checks simple changes of object(current/previous)
+
+3) ngOnInit : Initializes the component after angular first displays data-bind properties and sets the directive/component input properites. This event mainly for initializing the services or external data
+
+4) ngDoCheck : Detect and act upon changes, it is called during the change of code/template of given app
+
+5) ngAfterContentInit : Responds after angular checks any external content projected into component.
+
+6) ngAfterContentChecked : Responds after the content binded to the component and any changes are reflected. 
+
+7) ngAfterViewInit : Responds after angular loads the component view {parent/child views}
+
+8) ngAfterViewChecked : Responds once the data transfer from parent view to child view successfully. 
+
+9) ngDestroy 
+
+___________________________________________________________________________________________________
+
+In angular we have various types of forms known as
+
+1) Template Driven : Template Driven forms as the name indicates we need to write all code in html page and very less code in ts file, all validations will be done in html page, and fully depends on two-way binding.
+
+2) Model Driven : As the name indicates, we write 90% of code in ts file and 10% of code in HTML page, not depends on two-way binding
+
+in Model-Driven forms, we have various options as 
+
+
+
+
+
+

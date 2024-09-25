@@ -1,0 +1,61 @@
+<p>student works!</p>
+<form [formGroup]="userForm" (ngSubmit)="onFormSubmit()">
+    <table border="3" align="center">
+    <tr>
+            <th>Student Name</th>
+            <td>
+                <input formControlName="uname" />
+                <div *ngIf="userForm.get('uname').invalid &&
+				isValidFormSubmitted != null && 
+				!isValidFormSubmitted" [ngClass] = "'error'"> 
+			  Student Name required. 
+		   </div>
+ 
+            </td>
+    </tr>
+    <tr>
+            <th>Gender</th>
+            <td>
+                <input type="radio" value="male"
+			  formControlName="gender"> Male
+				 <input type="radio" value="female" 
+				 formControlName="gender"> Female
+                 <div *ngIf="userForm.get('gender').invalid && 
+                 isValidFormSubmitted != null && 
+                 !isValidFormSubmitted" [ngClass] = "'error'"> 
+                      Gender required. 
+                 </div>		 
+            </td>
+    </tr>
+    <tr>
+            <th>Married</th>
+            <td>
+                <input type="checkbox" formControlName="married">
+               </td>         
+    </tr>
+    <tr>
+        <td>Accept T & C </td>
+	    <td>
+            <input type="checkbox" formControlName="tc">
+            <div *ngIf="userForm.get('tc').invalid && 
+            isValidFormSubmitted != null && 
+            !isValidFormSubmitted" [ngClass] = "'error'"> 
+                Accept T & C.
+            </div>		 
+   
+        </td>
+    </tr>
+    <tr>
+        <th colspan="2">
+            <button>Submit</button>
+			<button type="button"
+			 (click)="setDefaultValues()">Set Default</button>
+		  <button type="button" (click)="reset()">Reset</button>	
+        </th>
+    </tr>
+    </table>
+</form>
+
+<p *ngIf="isValidFormSubmitted">
+    Form submitted successfully.
+</p>
